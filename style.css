@@ -1,0 +1,1184 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+#home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  background: url(HeroBackground2.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* border: red solid 1px; */
+}
+
+/******************************** Nav Bar Setup ********************************/
+
+.fixed-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 238, 1, 0.273);
+}
+
+/* The element at the top of the page right after the fixed navigation bar
+   MUST have sufficient top margin or else it will be covered by the bar */
+.content {
+  margin-top: 20px;
+}
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li,
+.fixed-nav-bar a {
+  height: 50px;
+  line-height: 50px;
+}
+.menu {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.menu a,
+.menu a:visited {
+  color: #ffffff;
+}
+.menu a:hover,
+.menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+}
+.sitename {
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+a.sitename,
+a:visited.sitename {
+  color: #e0e0e0;
+}
+.menu-items li {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.menu-items a {
+  text-decoration: none;
+}
+.show,
+.hide {
+  display: none;
+  padding-left: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #dde1e2;
+}
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    width: 100%;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none;
+    width: 100%;
+    margin-top: 50px;
+    background-color: grey;
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show,
+  .hide {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide,
+  #menu:target .menu-items {
+    display: inline-block;
+  }
+}
+
+@media only screen and (max-width: 220px) {
+  .sitename,
+  .show,
+  .hide {
+    font-size: 14px;
+  }
+}
+
+/******************************** First Page Setup ********************************/
+
+.Intro {
+  display: flex;
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+.Intro .Hello h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+  margin-top: -20%;
+}
+
+.Intro .Quote h1 {
+  font-family: Fasthand;
+  font-size: 35px;
+  color: white;
+  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.AuthorImg {
+  width: 13%;
+  aspect-ratio: 5.4/5.53;
+  background: url(FrntImage.png);
+  border-radius: 100%;
+  z-index: 1;
+}
+
+#home .Intro .centerh1 {
+  font-size: 28px;
+  font-family: Poppins;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: white;
+  width: 35%;
+  border-radius: 25px;
+  margin-top: -0.3%;
+}
+
+.Intro h1 p {
+  font-size: 20px;
+}
+
+.Intro h2 {
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 300;
+  color: white;
+  border-radius: 20px;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.Intro h2 p {
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+.centerh1 {
+  text-align: center;
+  justify-content: center;
+}
+
+/* Animation  */
+.wrapper {
+  display: flex;
+  background-color: #111111;
+  width: 80%;
+  justify-content: center;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+.wrapper .static-txt {
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts {
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li {
+  list-style: none;
+  color: gold;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 15s steps(5) infinite;
+}
+
+@keyframes slide {
+  100% {
+    top: -450px;
+  }
+}
+.dynamic-txts li span {
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #111111;
+  border-left: 2px solid white;
+  animation: typing 3s steps(20) infinite;
+}
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+  }
+  100% {
+    left: 0;
+  }
+}
+
+/******************************** Second Page Setup ********************************/
+#AboutMe {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(HeroBackground2.jpg);
+  background-size: cover;
+  background-position: center;
+  /* border: red solid 1px; */
+  flex-direction: column;
+  /* background: url(HeroBackground2.jpg); */
+}
+
+.AboutmeText {
+  display: flex;
+  margin-top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.AboutMeText h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+}
+
+#AboutMe h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Intro2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Intro2 h1 {
+  font-size: 28px;
+  font-family: Poppins;
+  font-size: 20px;
+}
+
+.Intro2 h2 {
+  font-family: Poppins;
+  font-style: bold;
+  font-weight: 300;
+  color: white;
+  border-radius: 20px;
+  justify-content: center;
+  width: 80%;
+  text-align: center;
+  padding: 5px;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.Intro2 h2 p {
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 300;
+}
+
+.AboutMeText {
+  font-size: 18px;
+  font-family: Poppins;
+  font-weight: 300;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: white;
+  width: 35%;
+  height: 100%;
+  border-radius: 25px;
+  margin-top: -0.3%;
+  margin-left: 2.5%;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.AboutMeText p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  line-height: 1.5;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Pg2Img {
+  text-align: start;
+  justify-content: start;
+}
+
+table th,
+td {
+  padding: 7px 10px 10px 10px;
+}
+
+table {
+  margin-top: 0.5%;
+}
+
+tr th {
+  font-size: 100%;
+  text-align: center;
+  border-bottom: 2px solid #111111;
+  border-top: 2px solid #111111;
+
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+tr td {
+  font-size: 100%;
+  text-align: center;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+/* mobile-responsive styles */
+@media only screen and (max-width: 768px) {
+  #AboutMe {
+    min-height: 100vh;
+    border: none;
+    background-size: contain;
+    flex-direction: column-reverse;
+    background-position: bottom;
+  }
+
+  .AboutMeText {
+    width: 90%;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.8);
+  }
+
+  .AboutMeText h1 {
+    font-size: 40px;
+  }
+
+  .Intro2 {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .Intro2 h1 {
+    font-size: 24px;
+  }
+
+  .Intro2 h2 {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .Intro2 h2 p {
+    font-size: 16px;
+  }
+
+  .Pg2Img {
+    text-align: center;
+    justify-content: center;
+  }
+
+  table th,
+  td {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  table {
+    margin-top: 10px;
+  }
+
+  tr th {
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  tr td {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+/******************************** Third Page Setup ********************************/
+#Experience {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(HeroBackground2.jpg);
+  background-size: cover;
+  background-position: center;
+  /* border: red solid 1px; */
+  flex-direction: column;
+}
+
+#Experience .ExperienceText h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+/********** TABS **********/
+
+.page {
+  width: 80%;
+  /* height: 100px; */
+  display: flex;
+  justify-content: space-around;
+}
+
+.ExpTab {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.tab-list {
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab-list li {
+  display: inline-block;
+  list-style-type: none;
+  background-color: #303030;
+  border-bottom: 3px solid #858585;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.tab-list li a {
+  color: #f2f2f2;
+  display: block;
+  padding: 3px 10px 3px 10px;
+  font-size: 10px;
+}
+
+.tab-list li a h3 {
+  font-size: 20px;
+}
+
+/********** HOVER STATES **********/
+.tab-list li.active,
+.tab-list li.hover {
+  background-color: #e5e5e5;
+  border-bottom: 3px solid #e5e5e5;
+}
+
+.tab-list li.active a,
+.tab-list li a:hover {
+  color: black;
+  background-color: gold;
+}
+
+/********** PANELS **********/
+.tab-panel {
+  display: none;
+  background-color: #e5e5e5;
+  color: #666;
+  min-height: 150px;
+  overflow: auto;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+.tab-panel p {
+  margin: 20px;
+}
+
+table th,
+td {
+  padding: 7px 10px 10px 10px;
+}
+
+table {
+  margin-top: 0.5%;
+}
+
+tr th {
+  font-size: 100%;
+  text-align: center;
+  border-bottom: 2px solid #111111;
+  border-top: 2px solid #111111;
+
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+tr td {
+  font-size: 100%;
+  text-align: center;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+.description {
+  width: 180px;
+  float: right;
+  padding: 20px 20px 0 0;
+  font-size: 85%;
+  line-height: 1em;
+}
+
+.standfirst {
+  margin: 0;
+}
+
+/* Slider */
+.slider2 {
+  max-width: 940px;
+  margin: 0px auto 30px auto;
+}
+
+.slide-viewer2 {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  aspect-ratio: 1/1.414;
+}
+
+.slide-group2 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide2 {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+/********** BUTTONS **********/
+.slide-buttons2 {
+  text-align: center;
+}
+
+.slide-btn {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 200%;
+  line-height: 0.5em;
+}
+
+.slide-btn.active,
+.slide-btn:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+/* ****** */
+.container {
+  /* height: 100vh; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.testimonial {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  height: 500px;
+  /* width: 100%; */
+  padding: 50px 0;
+  overflow: hidden;
+}
+.testimonial .image {
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.testimonial .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+.slideA p {
+  text-align: center;
+  /* padding: 0 160px; */
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  font-style: bold;
+}
+.slideA .quote-icon {
+  font-size: 30px;
+  color: gold;
+}
+.slideA .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 10%;
+}
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-pagination-bullet-active {
+  background-color: gold;
+}
+
+/******************************** Fourth Page Setup -Professional Qualification ********************************/
+#Qualifications {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(HeroBackground2.jpg);
+  background-size: cover;
+  background-position: center;
+  /* border: red solid 1px; */
+  flex-direction: column;
+  /* background: url(HeroBackground2.jpg); */
+}
+
+#Qualifications h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -3.5%;
+}
+
+.tablecert {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80%;
+  margin-top: 5%;
+}
+
+table {
+  margin-top: 0.5%;
+}
+
+tr th {
+  font-size: 100%;
+  text-align: center;
+  border-bottom: 2px solid #111111;
+  border-top: 2px solid #111111;
+
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+tr td {
+  font-size: 100%;
+  text-align: center;
+  color: black;
+  background-color: rgba(128, 128, 128, 0.8);
+  padding: 7px 10px 10px 10px;
+}
+
+td
+
+/* Slider */
+.slider {
+  max-width: 940px;
+  margin: 0px auto 30px auto;
+}
+
+.slide-viewer {
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  aspect-ratio: 1/1.414;
+}
+
+.slide-group {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+.slide:first-child {
+  display: block;
+}
+
+/********** BUTTONS **********/
+.slide-buttons {
+  text-align: center;
+}
+
+.slide-btn {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 200%;
+  line-height: 0.5em;
+}
+
+.slide-btn.active,
+.slide-btn:hover {
+  color: gold;
+  cursor: pointer;
+}
+
+/******************************** Fifth Page Setup -Professional Qualification ********************************/
+
+#contact {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(HeroBackground2.jpg);
+  background-size: cover;
+  background-position: center;
+  /* border: red solid 1px; */
+  flex-direction: column;
+}
+
+#contact h1 {
+  font-family: Fasthand;
+  font-size: 100px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -3.5%;
+}
+
+.ContactMeText {
+  display: flex;
+  width: 40%;
+  margin-top: 1%;
+}
+
+.Email {
+  width: 50%;
+  text-align: center;
+  background-color: grey;
+  margin-right: 1px;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+.Email a,
+.Mobile a {
+  color: white;
+}
+
+.Mobile {
+  width: 50%;
+  text-align: center;
+  background-color: grey;
+  margin-left: 1px;
+  border-radius: 6px;
+  color: white;
+  font-size: 20px;
+  font-family: Poppins;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+  width: 50%;
+}
+
+.btn {
+  margin-top: 1%;
+}
+
+/* 
+********************                             ********************
+********************                             ********************
+********************                             ********************
+************************Responsive Setup Start***********************
+********************                             ********************
+********************                             * ******************
+********************                             ********************
+*/
+
+@media screen and (max-width: 768px) {
+  /* Page 1 Section */
+  .Intro {
+    width: 100%;
+    margin-top: 10%;
+    padding: 0 5%;
+    text-align: center;
+  }
+
+  .Intro .Hello h1 {
+    font-size: 50px;
+    margin-top: 10%;
+  }
+
+  .AuthorImg {
+    width: 55%;
+    aspect-ratio: 5.4/5.53;
+    border-radius: 50%;
+    margin-top: 20px;
+  }
+
+  #home .Intro .centerh1 {
+    font-size: 20px;
+    width: 80%;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .Intro h1 p {
+    font-size: 16px;
+  }
+
+  .Intro h2 {
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+
+  .Intro h2 p {
+    font-size: 16px;
+  }
+
+  /* Animation */
+  .wrapper {
+    display: flex;
+    background-color: #111111;
+    width: 80%;
+    justify-content: center;
+    margin-top: 5px;
+    border-radius: 6px;
+  }
+  .wrapper .static-txt {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .wrapper .dynamic-txts {
+    height: 28px;
+    line-height: 30px;
+    overflow: hidden;
+    margin-left: -10%;
+  }
+  .dynamic-txts li {
+    list-style: none;
+    color: gold;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 15s steps(5) infinite;
+  }
+
+  @keyframes slide {
+    100% {
+      top: -150px;
+    }
+  }
+  .dynamic-txts li span {
+    position: relative;
+    margin: 5px 0;
+    line-height: 30px;
+  }
+  .dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #111111;
+    border-left: 2px solid white;
+    animation: typing 3s steps(20) infinite;
+  }
+  @keyframes typing {
+    40%,
+    60% {
+      left: calc(100% + 30px);
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  /* Page 2 Section */
+
+  .Pg2Img video {
+    width: 300px;
+    height: 250px;
+  }
+
+  #AboutMe .AboutmeText h1 {
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  #AboutMe {
+    flex-direction: column;
+  }
+
+  .Table80 {
+    width: 85%;
+  }
+
+  /* Page 3 Section */
+
+  #Experience .ExperienceText h1 {
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .page {
+    width: 80%;
+    /* height: 100px; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
+  .details .job {
+    text-align: center;
+  }
+
+  /* Page 4 Section */
+
+  #Qualifications h1 {
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .tablecert {
+    flex-direction: column;
+  }
+
+  table {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  tr th,
+  tr td {
+    display: block;
+    width: 100%;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .slide-viewer {
+    aspect-ratio: 1/1.414;
+    min-height: 410px;
+    margin-top: 2%;
+  }
+
+  .slide {
+    height: auto;
+  }
+
+  /* Contact Me Section */
+
+  .slide p {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    display: none;
+  }
+
+  #contact {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  #contact h1 {
+    font-size: 50px;
+    margin-top: 0;
+  }
+
+  .ContactMeText {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Email,
+  .Mobile {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Nav-Bar Responsive */
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
